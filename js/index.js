@@ -1,4 +1,10 @@
 // Your code goes here
+
+window.addEventListener('load', (event) => {
+    alert("You have arrived on the Fun Bus page! ")
+})
+
+
 const funBus = document.querySelector(".intro img");
 funBus.addEventListener("mouseenter", () => {
     funBus.style.transform = "scale(1.5)";
@@ -54,9 +60,14 @@ allPics.forEach((pics) => {
     })
 })
 
-// const allBackground = document.querySelector("body")
+const allBackground = document.querySelector("body")
+var isScrolling;
 
-// allBackground.addEventListener("wheel", () => {
-//     allBackground.style.backgroundColor = "limegreen"
-// })
-
+allBackground.addEventListener("wheel", () => {
+    allBackground.style.backgroundColor = "limegreen";
+    clearTimeout (isScrolling) ;
+    isScrolling = setTimeout(resetColor, 100);
+});
+        function resetColor() {
+            allBackground.style.backgroundColor = "white";
+        }
