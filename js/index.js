@@ -1,8 +1,8 @@
 // Your code goes here
 
-window.addEventListener('load', (event) => {
-    alert("You have arrived on the Fun Bus page! ")
-})
+// window.addEventListener('load', () => {
+//     alert("You have arrived on the Fun Bus page! ");
+// })
 
 
 const funBus = document.querySelector(".intro img");
@@ -17,24 +17,24 @@ funBus.addEventListener("mouseleave", () => {
 
 const middlePics = document.querySelectorAll(".img-content img")
 middlePics[0].addEventListener("click", () => {
-    middlePics[0].src = "img/maps.jpg"
+    middlePics[0].src = "img/maps.jpg";
 })
 middlePics[0].addEventListener("dblclick", () => {
-    middlePics[0].src = "img/adventure.jpg"
+    middlePics[0].src = "img/adventure.jpg";
 })
 middlePics[1].addEventListener("click", () => {
-    middlePics[1].src = "img/ocean.jpg"
+    middlePics[1].src = "img/ocean.jpg";
 })
 middlePics[1].addEventListener("dblclick", () => {
-    middlePics[1].src = "img/fun.jpg"
+    middlePics[1].src = "img/fun.jpg";
 })
 
 const destinationPic = document.querySelector(".content-destination img")
 destinationPic.addEventListener("click", () => {
-    destinationPic.src = "img/boats.jpg"
+    destinationPic.src = "img/boats.jpg";
 })
 destinationPic.addEventListener("dblclick", () => {
-    destinationPic.src = "img/destination.jpg"
+    destinationPic.src = "img/destination.jpg";
 })
 
 const allPics = document.querySelectorAll(".img-content, .content-destination img")
@@ -71,3 +71,11 @@ allBackground.addEventListener("wheel", () => {
         function resetColor() {
             allBackground.style.backgroundColor = "white";
         }
+
+const navBackground = document.querySelector(".main-navigation")
+navBackground.addEventListener("mouseover", () => {
+    navBackground.style.backgroundColor = "pink";
+})
+navBackground.addEventListener("mouseleave", () => {
+    navBackground.style.backgroundColor = "white";
+})
