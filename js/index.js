@@ -3,7 +3,7 @@
 // window.addEventListener('load', () => {
 //     alert("You have arrived on the Fun Bus page! ");
 // })
-
+ 
 
 const funBus = document.querySelector(".intro img");
 funBus.addEventListener("mouseenter", () => {
@@ -76,6 +76,8 @@ const navBackground = document.querySelector(".main-navigation")
 navBackground.addEventListener("mouseover", () => {
     navBackground.style.backgroundColor = "pink";
 })
-navBackground.addEventListener("mouseleave", () => {
+navBackground.addEventListener("mouseout", () => {
     navBackground.style.backgroundColor = "white";
 })
+
+
