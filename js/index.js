@@ -3,11 +3,10 @@
 // window.addEventListener('load', () => {
 //     alert("You have arrived on the Fun Bus page! ");
 // })
- 
 
 const funBus = document.querySelector(".intro img");
 funBus.addEventListener("mouseenter", () => {
-    funBus.style.transform = "scale(1.5)";
+    funBus.style.transform = "scale(1.2)";
     funBus.style.transition = "transform 1s";
 })
 funBus.addEventListener("mouseleave", () => {
@@ -61,12 +60,12 @@ allPics.forEach((pics) => {
 })
 
 const allBackground = document.querySelector("body")
-var isScrolling;
+var isWheel;
 
 allBackground.addEventListener("wheel", () => {
     allBackground.style.backgroundColor = "limegreen";
-    clearTimeout (isScrolling) ;
-    isScrolling = setTimeout(resetColor, 100);
+    clearTimeout (isWheel) ;
+    isWheel = setTimeout(resetColor, 100);
 });
         function resetColor() {
             allBackground.style.backgroundColor = "white";
@@ -79,5 +78,39 @@ navBackground.addEventListener("mouseover", () => {
 navBackground.addEventListener("mouseout", () => {
     navBackground.style.backgroundColor = "white";
 })
+
+let navAnchor = document.querySelectorAll("a")
+navAnchor.forEach((element) => {
+    element.addEventListener("click", (event) => {
+        event.preventDefault();
+    })
+})
+
+let log = document.createElement("p")
+let textBox = document.createElement("Input")
+let footerBox = document.querySelector(".footer")
+textBox.setAttribute("type", "text")
+footerBox.append(textBox);
+footerBox.append(log)
+
+let insideTextBox = document.querySelector("input")
+insideTextBox.value = "You have reached the bottom of this page";
+insideTextBox.style.height = "30px";
+insideTextBox.style.width = "250px";
+insideTextBox.style.textAlign = "center";
+insideTextBox.style.marginLeft = "840px";
+insideTextBox.style.backgroundColor = "#FFEBCD"
+
+insideTextBox.addEventListener("select", (event) => {
+    const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd)
+    log.textContent = `You selected: ${selection}`
+})
+insideTextBox.addEventListener("focusin", (event) => {
+    event.target.style.backgroundColor = "#E0BD84"
+})
+insideTextBox.addEventListener("focusout", (event) => {
+    event.target.style.backgroundColor = "#FFEBCD"
+})
+
 
 
